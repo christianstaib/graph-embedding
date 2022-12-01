@@ -1,7 +1,7 @@
 Welcome to graph-embedding's documentation!
 ===========================================
 
-This is a test
+This is a tests
 --------------
 
 You can use ``backticks`` for showing ``highlighted`` code.
