@@ -1,5 +1,5 @@
 This my first method!!!!
 ========================
 
-.. automodule:: graph_embedding
+.. automodule:: graph_embedding.simple_embedder
     :members:
