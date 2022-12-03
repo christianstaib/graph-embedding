@@ -15,7 +15,9 @@ jobs:
 
       - name: Install dependencies
         run: |
+          apt-get install python3-sphinx
           pip install -r requirements.txt
+          
       - name: Build Sphinx docs
         run: |
           cd docs/
@@ -27,4 +29,4 @@ jobs:
         with:
           publish_branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: _build/html/
+          publish_dir: docs/_build
