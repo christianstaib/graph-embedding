@@ -1,3 +1,1 @@
-This is our graph embedding project.
-
-We aim to create graph representation learning methods.
+To see our documentation please visit https://chrishaxalot.github.io/graph-embedding/
