@@ -1,6 +1,27 @@
 {
     "esbonio.sphinx.confDir": "",
     "cSpell.words": [
-        "graphtoolbox"
+        "autoclass",
+        "documentclass",
+        "embeddingdoc",
+        "githubpages",
+        "graphtoolbox",
+        "howto",
+        "htbp",
+        "htmlhelp",
+        "letterpaper",
+        "localtoc",
+        "mathjax",
+        "maxdepth",
+        "networkx",
+        "papersize",
+        "pointsize",
+        "searchbox",
+        "sourcelink",
+        "Staib",
+        "Stuby",
+        "toctree",
+        "todos",
+        "viewcode"
     ]
 }
