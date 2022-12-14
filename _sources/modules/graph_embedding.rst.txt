@@ -3,5 +3,7 @@ This my first method!!!!
 
 Testing documentation builds
 
-.. automodule:: graphtoolbox.graph_helper
+.. autoclass:: graphtoolbox.graph_helper
     :members:
+.. automodule:: graphtoolbox
+    :mebmers:
