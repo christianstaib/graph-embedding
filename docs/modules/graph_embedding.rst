@@ -3,5 +3,5 @@ This my first method!!!!
 
 asdsa
 
-.. automodule:: src.graphtoolbox.graph_helper
+.. automodule:: graph-embedding.graph_helper
     :members:
