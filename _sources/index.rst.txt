@@ -16,7 +16,7 @@ We will *embed* graphs of unknown size with arbitrary features into an n-dimensi
 
 .. toctree::
    :glob:
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Package Reference
 
-   modules/graph_embedding
+   modules/modules
