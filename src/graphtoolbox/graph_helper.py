@@ -3,13 +3,17 @@ import numpy as np
 
 
 class GraphHelper():
-    '''
-    Test comment
-    '''
+    """
+    This is a class comment
+    """
+
     def __init__(self) -> None:
         pass
 
     def get_nx_graph(self, graph):
+        """
+        This is a method comment
+        """
         G = nx.Graph()
         G.add_nodes_from(range(graph['num_nodes']))
 
@@ -28,11 +32,11 @@ class GraphHelper():
         self,
         graph: nx.Graph
     ) -> nx.Graph:
-        '''
+        """
         Generates a new graph where each edge (u, v) is replaced with two edges (u, uv), (uv, v) and a new node uv.
         The attributes of the edge are copied to the new edge.
         This method may help if a graph embedding does not not support edge attributes.
-        '''
+        """
         new_graph = nx.Graph()
         max_node = max(list(graph.nodes))
 
