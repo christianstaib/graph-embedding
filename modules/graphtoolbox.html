@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>graphtoolbox package &mdash; graph-embedding  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="graphtoolbox" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> graph-embedding
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Notes:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/how-to.html">How-To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/terms_and_definitions.html">Terms and definitions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Package Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">graphtoolbox</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">graphtoolbox package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-graphtoolbox.graph_helper">graphtoolbox.graph_helper module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#graphtoolbox.graph_helper.GraphHelper"><code class="docutils literal notranslate"><span class="pre">GraphHelper</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-graphtoolbox.ogb_data_helper">graphtoolbox.ogb_data_helper module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#graphtoolbox.ogb_data_helper.OgbDataHelper"><code class="docutils literal notranslate"><span class="pre">OgbDataHelper</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-graphtoolbox.random_walker">graphtoolbox.random_walker module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#graphtoolbox.random_walker.RandomWalker"><code class="docutils literal notranslate"><span class="pre">RandomWalker</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-graphtoolbox.simple_embedder">graphtoolbox.simple_embedder module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#graphtoolbox.simple_embedder.SimpleEmbedder"><code class="docutils literal notranslate"><span class="pre">SimpleEmbedder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-graphtoolbox">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">graph-embedding</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">graphtoolbox</a></li>
+      <li class="breadcrumb-item active">graphtoolbox package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/graphtoolbox.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="graphtoolbox-package">
+<h1>graphtoolbox package<a class="headerlink" href="#graphtoolbox-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-graphtoolbox.graph_helper">
+<span id="graphtoolbox-graph-helper-module"></span><h2>graphtoolbox.graph_helper module<a class="headerlink" href="#module-graphtoolbox.graph_helper" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="graphtoolbox.graph_helper.GraphHelper">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">graphtoolbox.graph_helper.</span></span><span class="sig-name descname"><span class="pre">GraphHelper</span></span><a class="reference internal" href="../_modules/graphtoolbox/graph_helper.html#GraphHelper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.graph_helper.GraphHelper" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This is a class comment</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="graphtoolbox.graph_helper.GraphHelper.edges_to_nodes">
+<span class="sig-name descname"><span class="pre">edges_to_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Graph</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Graph</span></span></span><a class="reference internal" href="../_modules/graphtoolbox/graph_helper.html#GraphHelper.edges_to_nodes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.graph_helper.GraphHelper.edges_to_nodes" title="Permalink to this definition"></a></dt>
+<dd><p>Generates a new graph where each edge (u, v) is replaced with two edges
+(u, uv), (uv, v) and a new node uv. The attributes of the edge are
+copied to the new edge. This method may help if a graph embedding does
+not not support edge attributes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="graphtoolbox.graph_helper.GraphHelper.get_nx_graph">
+<span class="sig-name descname"><span class="pre">get_nx_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/graphtoolbox/graph_helper.html#GraphHelper.get_nx_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.graph_helper.GraphHelper.get_nx_graph" title="Permalink to this definition"></a></dt>
+<dd><p>This is a method comment</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-graphtoolbox.ogb_data_helper">
+<span id="graphtoolbox-ogb-data-helper-module"></span><h2>graphtoolbox.ogb_data_helper module<a class="headerlink" href="#module-graphtoolbox.ogb_data_helper" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="graphtoolbox.ogb_data_helper.OgbDataHelper">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">graphtoolbox.ogb_data_helper.</span></span><span class="sig-name descname"><span class="pre">OgbDataHelper</span></span><a class="reference internal" href="../_modules/graphtoolbox/ogb_data_helper.html#OgbDataHelper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.ogb_data_helper.OgbDataHelper" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="graphtoolbox.ogb_data_helper.OgbDataHelper.get_nx_graph">
+<span class="sig-name descname"><span class="pre">get_nx_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/graphtoolbox/ogb_data_helper.html#OgbDataHelper.get_nx_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.ogb_data_helper.OgbDataHelper.get_nx_graph" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-graphtoolbox.random_walker">
+<span id="graphtoolbox-random-walker-module"></span><h2>graphtoolbox.random_walker module<a class="headerlink" href="#module-graphtoolbox.random_walker" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="graphtoolbox.random_walker.RandomWalker">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">graphtoolbox.random_walker.</span></span><span class="sig-name descname"><span class="pre">RandomWalker</span></span><a class="reference internal" href="../_modules/graphtoolbox/random_walker.html#RandomWalker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.random_walker.RandomWalker" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="graphtoolbox.random_walker.RandomWalker.one_random_walk">
+<span class="sig-name descname"><span class="pre">one_random_walk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/graphtoolbox/random_walker.html#RandomWalker.one_random_walk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.random_walker.RandomWalker.one_random_walk" title="Permalink to this definition"></a></dt>
+<dd><p>Performs a random walk on a graph</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<em>nx.Graph</em>) – Graph on which the random walk shall be done.
+limit_length (bool, optional): Indicates if the length of the
+walk is limited. Wether the length is limited or not, the
+random walk stops once a vertex is visited a second time.
+Defaults to False.</p></li>
+<li><p><strong>max_length</strong> (<em>int</em><em>, </em><em>optional</em>) – Max length of random walk. Defaults to
+None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of vertex IDs visited by the random walk.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="graphtoolbox.random_walker.RandomWalker.random_walks">
+<span class="sig-name descname"><span class="pre">random_walks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_walks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/graphtoolbox/random_walker.html#RandomWalker.random_walks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.random_walker.RandomWalker.random_walks" title="Permalink to this definition"></a></dt>
+<dd><p>Performs num_walks many random walks on a given graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<em>nx.Graph</em>) – Graph on which the random walks shall be done.
+num_walks (int): Number of walks to be performed on the graph.
+limit_length (bool, optional): Indicates if the length of the
+walk is limited. Wether the length is limited or not, the
+random walk stops once a vertex is visited a second time.
+Defaults to False.</p></li>
+<li><p><strong>max_length</strong> (<em>int</em><em>, </em><em>optional</em>) – Max length of random walk. Defaults to
+None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>List of List of vertex IDs visited by the random</dt><dd><p>walks.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[List[int]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-graphtoolbox.simple_embedder">
+<span id="graphtoolbox-simple-embedder-module"></span><h2>graphtoolbox.simple_embedder module<a class="headerlink" href="#module-graphtoolbox.simple_embedder" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="graphtoolbox.simple_embedder.SimpleEmbedder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">graphtoolbox.simple_embedder.</span></span><span class="sig-name descname"><span class="pre">SimpleEmbedder</span></span><a class="reference internal" href="../_modules/graphtoolbox/simple_embedder.html#SimpleEmbedder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.simple_embedder.SimpleEmbedder" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Simple Embedder that learns representations for a list of graphs.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="graphtoolbox.simple_embedder.SimpleEmbedder.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/graphtoolbox/simple_embedder.html#SimpleEmbedder.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.simple_embedder.SimpleEmbedder.fit" title="Permalink to this definition"></a></dt>
+<dd><p>_summary_</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="graphtoolbox.simple_embedder.SimpleEmbedder.get_embedding">
+<span class="sig-name descname"><span class="pre">get_embedding</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/graphtoolbox/simple_embedder.html#SimpleEmbedder.get_embedding"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.simple_embedder.SimpleEmbedder.get_embedding" title="Permalink to this definition"></a></dt>
+<dd><p>_summary_</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-graphtoolbox">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-graphtoolbox" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="graphtoolbox" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Staib.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -76,11 +76,11 @@
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
-<div class="viewcode-block" id="OgbDataHelper"><a class="viewcode-back" href="../../graphtoolbox.html#graphtoolbox.ogb_data_helper.OgbDataHelper">[docs]</a><span class="k">class</span> <span class="nc">OgbDataHelper</span><span class="p">:</span>
+<div class="viewcode-block" id="OgbDataHelper"><a class="viewcode-back" href="../../modules/graphtoolbox.html#graphtoolbox.ogb_data_helper.OgbDataHelper">[docs]</a><span class="k">class</span> <span class="nc">OgbDataHelper</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">pass</span>
 
-<div class="viewcode-block" id="OgbDataHelper.get_nx_graph"><a class="viewcode-back" href="../../graphtoolbox.html#graphtoolbox.ogb_data_helper.OgbDataHelper.get_nx_graph">[docs]</a>    <span class="k">def</span> <span class="nf">get_nx_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">graph</span><span class="p">):</span>
+<div class="viewcode-block" id="OgbDataHelper.get_nx_graph"><a class="viewcode-back" href="../../modules/graphtoolbox.html#graphtoolbox.ogb_data_helper.OgbDataHelper.get_nx_graph">[docs]</a>    <span class="k">def</span> <span class="nf">get_nx_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">graph</span><span class="p">):</span>
         <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
         <span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;num_nodes&#39;</span><span class="p">]))</span>
 
