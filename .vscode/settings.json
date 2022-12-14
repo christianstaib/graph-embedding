@@ -3,6 +3,7 @@
     "cSpell.words": [
         "autoclass",
         "documentclass",
+        "Embedder",
         "embeddingdoc",
         "githubpages",
         "graphtoolbox",
@@ -22,6 +23,7 @@
         "Stuby",
         "toctree",
         "todos",
-        "viewcode"
+        "viewcode",
+        "simple_embedder"
     ]
 }
