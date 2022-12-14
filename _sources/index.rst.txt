@@ -1,17 +1,15 @@
-Welcome to graph-embedding's documentation!
-===========================================
+graphtoolbox documentation
+==========================
 
-This is a tests
----------------
+This package provides tools and methods to process graphs for machine learning.
 
-You can use ``backticks`` for showing ``highlighted`` code.
+We will *embed* graphs of unknown size with arbitrary features into an n-dimensional space.
 
 .. toctree::
    :glob:
    :maxdepth: 2
    :caption: Notes:
 
-   introduction/getting_started
    introduction/how-to
    introduction/installation
 

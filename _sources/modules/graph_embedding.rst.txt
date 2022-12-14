@@ -1,5 +1,7 @@
 This my first method!!!!
 ========================
 
-.. automodule:: graph_embedding.simple_embedder
+asdsa
+
+.. automodule:: src.graphtoolbox.graph_helper
     :members:
