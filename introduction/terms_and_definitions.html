@@ -77,7 +77,10 @@
              
   <section id="terms-and-definitions">
 <h1>Terms and definitions<a class="headerlink" href="#terms-and-definitions" title="Permalink to this heading"></a></h1>
-<p>A graph is a tuple <span class="math notranslate nohighlight">\(G = (V, E, A_V, A_E)\)</span>. <span class="math notranslate nohighlight">\(V\)</span> is the set of vertices. <span class="math notranslate nohighlight">\(E\)</span> is the set of edges, we don’t differentiate between directed and undirected between graphs as we use networkx graphs and their functions <code class="docutils literal notranslate"><span class="pre">graphs</span></code></p>
+<p>A graph is a tuple <span class="math notranslate nohighlight">\(G = (V, E, A_V, A_E)\)</span>. <span class="math notranslate nohighlight">\(V\)</span> is the set of vertices. <span class="math notranslate nohighlight">\(E\)</span> is the set of edges. We don’t differentiate between directed and undirected between graphs but expect that there is at most one edge between two vertices. <span class="math notranslate nohighlight">\(A_V \colon \)</span> are the attributes of the vertices and edges.</p>
+<p>For now we limit the allowed attributes to a list of numbers and strings.</p>
+<p>A <cite>path</cite> in a graph is a list of vertices where two adjacent vertices in the list are also adjacent in the graph. We define the <cite>length</cite> of a path as the length of the list of vertices.</p>
+<p>A <cite>random walk</cite> is a <cite>path</cite> that is build with a random selection of vertices. Random doesn’t necessarily mean equal distributed.</p>
 </section>
 
 
