@@ -17,8 +17,12 @@ class RandomWalker:
 
         Args:
             graph (nx.Graph): Graph on which the random walk shall be done.
-            limit_length (bool, optional): Indicates if the length of the walk is limited. Wether the length is limited or not, the random walk stops once a vertex is visited a second time. Defaults to False.
-            max_length (int, optional): Max length of random walk. Defaults to None.
+                limit_length (bool, optional): Indicates if the length of the
+                walk is limited. Wether the length is limited or not, the
+                random walk stops once a vertex is visited a second time.
+                Defaults to False.
+            max_length (int, optional): Max length of random walk. Defaults to
+                None.
 
         Returns:
             List[int]: List of vertex IDs visited by the random walk.
@@ -48,12 +52,17 @@ class RandomWalker:
 
         Args:
             graph (nx.Graph): Graph on which the random walks shall be done.
-            num_walks (int): Number of walks to be performed on the graph.
-            limit_length (bool, optional): Indicates if the length of the walk is limited. Wether the length is limited or not, the random walk stops once a vertex is visited a second time. Defaults to False.
-            max_length (int, optional): Max length of random walk. Defaults to None.
+                num_walks (int): Number of walks to be performed on the graph.
+                limit_length (bool, optional): Indicates if the length of the
+                walk is limited. Wether the length is limited or not, the
+                random walk stops once a vertex is visited a second time.
+                Defaults to False.
+            max_length (int, optional): Max length of random walk. Defaults to
+                None.
 
         Returns:
-            List[List[int]]: List of List of vertex IDs visited by the random walks.
+            List[List[int]]: List of List of vertex IDs visited by the random
+                walks.
         """
 
         walks = []

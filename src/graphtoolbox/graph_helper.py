@@ -33,9 +33,10 @@ class GraphHelper():
         graph: nx.Graph
     ) -> nx.Graph:
         """
-        Generates a new graph where each edge (u, v) is replaced with two edges (u, uv), (uv, v) and a new node uv.
-        The attributes of the edge are copied to the new edge.
-        This method may help if a graph embedding does not not support edge attributes.
+        Generates a new graph where each edge (u, v) is replaced with two edges
+        (u, uv), (uv, v) and a new node uv. The attributes of the edge are
+        copied to the new edge. This method may help if a graph embedding does
+        not not support edge attributes.
         """
         new_graph = nx.Graph()
         max_node = max(list(graph.nodes))
@@ -53,7 +54,8 @@ class GraphHelper():
             # new nodes are numbered starting from max(list(graph.nodes)) + 1
             max_node += 1
 
-            # replace edge (u, v) with edges (u, max_node), (max_node, v) and node max_node
+            # replace edge (u, v) with edges (u, max_node), (max_node, v) and
+            # node max_node
             new_graph.add_node(max_node)
             new_graph.add_edge(u, max_node)
             new_graph.add_edge(max_node, v)
