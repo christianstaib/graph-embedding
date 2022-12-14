@@ -1,4 +1,4 @@
 installation
-======================================================
+============
 
-please dont ask, i don't know how this works xx
+Go into the project and type ``pip install .``
