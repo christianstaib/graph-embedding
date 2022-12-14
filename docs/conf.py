@@ -22,7 +22,7 @@ sys.path.insert(0, os.path.abspath('../src/'))
 
 project = 'graph-embedding'
 copyright = '2022, Staib'
-author = 'Staib'
+author = 'Staib, Stuby, Zeil'
 
 # The short X.Y version
 version = ''
