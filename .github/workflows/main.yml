@@ -20,7 +20,7 @@ jobs:
           
       - name: Build Sphinx docs
         run: |
-          sphinx-apidoc -o docs/modules ./src/graphtoolbox
+          sphinx-apidoc -f -o docs/modules ./src/graphtoolbox
           cd docs/
           make html
 
