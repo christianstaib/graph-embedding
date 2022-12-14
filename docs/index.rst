@@ -10,8 +10,9 @@ We will *embed* graphs of unknown size with arbitrary features into an n-dimensi
    :maxdepth: 2
    :caption: Notes:
 
-   introduction/how-to
    introduction/installation
+   introduction/how-to
+   introduction/terms_and_definitions
 
 .. toctree::
    :glob:
