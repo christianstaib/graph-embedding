@@ -1,10 +1,11 @@
 import networkx as nx
 import numpy as np
 
-'''
-Test comment
-'''
+
 class GraphHelper():
+    '''
+    Test comment
+    '''
     def __init__(self) -> None:
         pass
 
