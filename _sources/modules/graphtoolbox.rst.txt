@@ -36,6 +36,14 @@ graphtoolbox.simple\_embedder module
    :undoc-members:
    :show-inheritance:
 
+graphtoolbox.test\_helper module
+--------------------------------
+
+.. automodule:: graphtoolbox.test_helper
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 
