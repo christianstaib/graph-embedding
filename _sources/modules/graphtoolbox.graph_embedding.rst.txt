@@ -1,0 +1,21 @@
+graphtoolbox.graph\_embedding package
+=====================================
+
+Submodules
+----------
+
+graphtoolbox.graph\_embedding.random\_walk\_embedder module
+-----------------------------------------------------------
+
+.. automodule:: graphtoolbox.graph_embedding.random_walk_embedder
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: graphtoolbox.graph_embedding
+   :members:
+   :undoc-members:
+   :show-inheritance:

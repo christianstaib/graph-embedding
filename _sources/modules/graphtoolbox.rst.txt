@@ -1,32 +1,17 @@
 graphtoolbox package
 ====================
 
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   graphtoolbox.graph_embedding
+   graphtoolbox.helpers
+
 Submodules
 ----------
-
-graphtoolbox.graph\_helper module
----------------------------------
-
-.. automodule:: graphtoolbox.graph_helper
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-graphtoolbox.ogb\_data\_helper module
--------------------------------------
-
-.. automodule:: graphtoolbox.ogb_data_helper
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-graphtoolbox.random\_walker module
-----------------------------------
-
-.. automodule:: graphtoolbox.random_walker
-   :members:
-   :undoc-members:
-   :show-inheritance:
 
 graphtoolbox.simple\_embedder module
 ------------------------------------
