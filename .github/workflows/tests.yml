@@ -33,4 +33,4 @@ jobs:
         # Run the tests
       - name: Run tests
         run: |
-          pytest ./src/tests/
+          pytest src/test/
