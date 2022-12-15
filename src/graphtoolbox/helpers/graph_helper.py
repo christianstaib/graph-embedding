@@ -30,7 +30,7 @@ class GraphHelper():
 
     def edges_to_nodes(
         self,
-        graph: nx.Graph
+        graph:      nx.Graph
     ) -> nx.Graph:
         """
         Generates a new graph where each edge (u, v) is replaced with two edges
