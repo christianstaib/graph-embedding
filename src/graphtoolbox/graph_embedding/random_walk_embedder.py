@@ -21,7 +21,8 @@ class RandomWalkEmbedder(Estimator):
         for i, graph in enumerate(graphs):
             replace_dict = walks_to_string_helper.get_replace_dict(
                 graph, self.attributed)
-            walks = random_walker.random_walks(graph, graph.number_of_nodes())
+            walks = random_walker.random_walks(
+                graph, 5*graph.number_of_nodes())
             document = walks_to_string_helper.get_document(walks, replace_dict)
             documents.append(document)
 
@@ -31,7 +32,9 @@ class RandomWalkEmbedder(Estimator):
         ]
 
         self.model = Doc2Vec(
-            documents
+            documents,
+            vector_size=250,
+            epochs=100
         )
 
         self._embedding = [
