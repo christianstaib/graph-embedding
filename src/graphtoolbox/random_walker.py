@@ -11,7 +11,7 @@ class RandomWalker:
         self,
         graph: nx.Graph,
         limit_length: bool = False,
-        max_length: int = None
+        max_length: int = None  # type:ignore
     ) -> List[int]:
         """Performs a random walk on a graph
 
@@ -46,7 +46,7 @@ class RandomWalker:
         graph: nx.Graph,
         num_walks: int,
         limit_length: bool = False,
-        max_length: int = None
+        max_length: int = None  # type:ignore
     ) -> List[List[int]]:
         """Performs num_walks many random walks on a given graph.
 
@@ -75,3 +75,6 @@ class RandomWalker:
             walks.append(walk)
 
         return walks
+
+    def dummy_function(self):
+        return 1

@@ -65,3 +65,6 @@ class GraphHelper():
             new_graph.nodes[max_node].update(features)
 
         return new_graph
+
+    def dummy_function(self):
+        return 1

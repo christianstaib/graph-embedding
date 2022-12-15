@@ -20,3 +20,6 @@ class OgbDataHelper:
             G.add_edge(u, v, feature=features)
 
         return G
+
+    def dummy_function(self):
+        return 1

@@ -9,7 +9,11 @@ setup(
     author_email='TODO',
     license='TODO',
     packages=['graphtoolbox'],
-    install_requires=[],
+    install_requires=[
+        'numpy',
+        'networkx',
+        'pytest'
+    ],
 
     classifiers=[
         'Private :: Do Not Upload',
