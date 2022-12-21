@@ -11,32 +11,35 @@ class RandomWalker:
         self,
         graph: nx.Graph,
         limit_length: bool = False,
-        max_length: int = None  # type:ignore
+        max_length: int = None
     ) -> List[int]:
-        """Performs a random walk on a graph
+        """Performs one random walk on a given graph.
 
         Args:
             graph (nx.Graph): Graph on which the random walk shall be done.
-                limit_length (bool, optional): Indicates if the length of the
-                walk is limited. Wether the length is limited or not, the
-                random walk stops once a vertex is visited a second time.
-                Defaults to False.
+            limit_length (bool, optional): Indicates if the length of the walk
+                is limited. Wether the length is limited or not, the random
+                walk stops once a vertex is visited a second time. Defaults to
+                False.
             max_length (int, optional): Max length of random walk. Defaults to
                 None.
 
         Returns:
             List[int]: List of vertex IDs visited by the random walk.
         """
-
         walk = []
-        walk.append(random.choice(range(graph.number_of_nodes())))
+        start_node = random.choice(range(graph.number_of_nodes()))
+        walk.append(start_node)
 
         while (not limit_length) or (len(walk) < max_length):
-            neighborhood = list(graph.neighbors(walk[-1]))
-            neighborhood = list(set(neighborhood) - set(walk))
-            if neighborhood:
-                walk.append(random.choice(neighborhood))
+            neighbors = list(graph.neighbors(walk[-1]))
+            unvisited_neighbors = list(set(neighbors) - set(walk))
+
+            if unvisited_neighbors:
+                next_node = random.choice(unvisited_neighbors)
+                walk.append(next_node)
             else:
+                # If there are no more neighbors to visit, end the walk
                 break
 
         return walk
