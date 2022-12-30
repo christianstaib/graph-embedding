@@ -2,12 +2,12 @@ Dataset
 ==================
 The Datasets used for training our models will be provided by the Open Graph Benchmark (OGB).
 For each Dataset, the following files will be provided:
-#.Graph Lables.
-#.Number of Nodes per Graph.
-#.Number of Edges per Graph.
-#.Edges between Nodes.
-#.Node Features
-#.Edge Features
+#. Graph Lables.
+#. Number of Nodes per Graph.
+#. Number of Edges per Graph.
+#. Edges between Nodes.
+#. Node Features
+#. Edge Features
 
 Node Features 
 -------------------
