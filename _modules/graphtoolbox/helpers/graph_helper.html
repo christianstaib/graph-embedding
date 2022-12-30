@@ -116,26 +116,19 @@
         <span class="n">new_graph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
         <span class="n">max_node</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">))</span>
 
-        <span class="c1"># copy nodes</span>
         <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nx</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">graph</span><span class="p">):</span>
             <span class="n">new_graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
 
-            <span class="c1"># copy node attributes</span>
             <span class="n">features</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
             <span class="n">new_graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
 
-        <span class="c1"># add new nodes and their edges</span>
         <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">nx</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">graph</span><span class="p">):</span>
-            <span class="c1"># new nodes are numbered starting from max(list(graph.nodes)) + 1</span>
             <span class="n">max_node</span> <span class="o">+=</span> <span class="mi">1</span>
 
-            <span class="c1"># replace edge (u, v) with edges (u, max_node), (max_node, v) and</span>
-            <span class="c1"># node max_node</span>
             <span class="n">new_graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">max_node</span><span class="p">)</span>
             <span class="n">new_graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">max_node</span><span class="p">)</span>
             <span class="n">new_graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">max_node</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
 
-            <span class="c1"># copy edge attributes from (u, v) to node max_node</span>
             <span class="n">features</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="p">[</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">]</span>
             <span class="n">new_graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">max_node</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
 
