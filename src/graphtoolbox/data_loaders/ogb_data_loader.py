@@ -4,7 +4,7 @@ from ogb.graphproppred import GraphPropPredDataset
 from tqdm import tqdm
 
 
-class OgbDataHelper:
+class OgbDataLoader:
     """A helper class for processing OGB datasets."""
 
     def __init__(self) -> None:
