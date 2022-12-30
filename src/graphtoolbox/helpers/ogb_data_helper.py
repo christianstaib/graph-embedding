@@ -5,6 +5,8 @@ from tqdm import tqdm
 
 
 class OgbDataHelper:
+    """A helper class for processing OGB datasets."""
+
     def __init__(self) -> None:
         pass
 
