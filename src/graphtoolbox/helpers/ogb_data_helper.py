@@ -1,12 +1,14 @@
 import networkx as nx
 import numpy as np
+from ogb.graphproppred import GraphPropPredDataset
+from tqdm import tqdm
 
 
 class OgbDataHelper:
     def __init__(self) -> None:
         pass
 
-    def get_nx_graph(self, graph_dict: dict):
+    def __graph_dict_to_nx_graph(self, graph_dict: dict):
         """
         Constructs a NetworkX graph object from the given graph dictionary.
 
@@ -45,6 +47,46 @@ class OgbDataHelper:
 
         # Return the final graph
         return graph
+
+    def get_processed_dataset(self, dataset_name: str):
+        """
+        Loads and OGB dataset and returns a dictionary with the train, 
+        validation, and test features (as NetworkX graphs) and labels.
+
+        Args:
+            dataset_name: The name of the dataset to be processed.
+
+        Returns:
+            A dictionary with the train, validation, and test features 
+            (as NetworkX graphs) and labels
+        """
+        # Initialize a GraphPropPredDataset object with the given dataset name
+        dataset = GraphPropPredDataset(name=dataset_name)
+        # Get the train, validation, and test indices for the dataset
+        split_idx = dataset.get_idx_split()
+
+        train_idx = split_idx["train"]
+        valid_idx = split_idx["valid"]
+        test_idx = split_idx["test"]
+
+        # Initialize empty lists for the graph data and labels
+        X, y = [], []
+        # Iterate through the dataset, converting each graph dictionary to a
+        # NetworkX graph object and adding it to the list of graph data. Also
+        # add the label for each graph to the list of labels
+        for graph_dict, label in tqdm(dataset):
+            X.append(self.__graph_dict_to_nx_graph(graph_dict))
+            y.append(label)
+
+        # Create a dictionary with the train, validation, and test data and
+        # labels
+        dataset_dict = {
+            'train': ([X[i] for i in train_idx], [y[i] for i in train_idx]),
+            'valid': ([X[i] for i in valid_idx], [y[i] for i in valid_idx]),
+            'test': ([X[i] for i in test_idx], [y[i] for i in test_idx])
+        }
+
+        return dataset_dict
 
     def dummy_function(self):
         return 1
