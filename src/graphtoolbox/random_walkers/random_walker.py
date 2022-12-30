@@ -13,20 +13,6 @@ class RandomWalker:
         limit_length: bool = False,
         max_length: int = None
     ) -> List[int]:
-        """Performs one random walk on a given graph.
-
-        Args:
-            graph (nx.Graph): Graph on which the random walk shall be done.
-            limit_length (bool, optional): Indicates if the length of the walk
-                is limited. Wether the length is limited or not, the random
-                walk stops once a vertex is visited a second time. Defaults to
-                False.
-            max_length (int, optional): Max length of random walk. Defaults to
-                None.
-
-        Returns:
-            List[int]: List of vertex IDs visited by the random walk.
-        """
         walk = []
         start_node = random.choice(range(graph.number_of_nodes()))
         walk.append(start_node)
@@ -51,23 +37,6 @@ class RandomWalker:
         limit_length: bool = False,
         max_length: int = None  # type:ignore
     ) -> List[List[int]]:
-        """Performs num_walks many random walks on a given graph.
-
-        Args:
-            graph (nx.Graph): Graph on which the random walks shall be done.
-                num_walks (int): Number of walks to be performed on the graph.
-                limit_length (bool, optional): Indicates if the length of the
-                walk is limited. Wether the length is limited or not, the
-                random walk stops once a vertex is visited a second time.
-                Defaults to False.
-            max_length (int, optional): Max length of random walk. Defaults to
-                None.
-
-        Returns:
-            List[List[int]]: List of List of vertex IDs visited by the random
-                walks.
-        """
-
         walks = []
 
         for _ in range(num_walks):

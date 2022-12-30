@@ -15,12 +15,11 @@ class OgbDataLoader:
         Constructs a NetworkX graph object from the given graph dictionary.
 
         Args:
-            graph_dict: A dictionary representing a graph, with the following
-                keys:
-                    - 'num_nodes': The number of nodes in the graph.
-                    - 'node_feat': A list of node features, with one feature vector per node.
-                    - 'edge_index': An edge index array of shape (2, E), where E is the number of edges.
-                    - 'edge_feat': A list of edge features, with one feature vector per edge.
+            graph_dict: A dictionary representing a graph, with the following keys:
+                - 'num_nodes': The number of nodes in the graph.
+                - 'node_feat': A list of node features, with one feature vector per node.
+                - 'edge_index': An edge index array of shape (2, E), where E is the number of edges.
+                - 'edge_feat': A list of edge features, with one feature vector per edge.
 
         Returns:
             A NetworkX graph object with nodes and edges corresponding to the input graph.

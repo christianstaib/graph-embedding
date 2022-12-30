@@ -5,7 +5,7 @@ import numpy as np
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 from karateclub.estimator import Estimator
 
-from graphtoolbox.helpers import WalksToStringHelper, RandomWalker
+from graphtoolbox.random_walkers import WalksToStringHelper, RandomWalker
 
 
 class RandomWalkEmbedder(Estimator):
