@@ -8,7 +8,7 @@ class OgbDataHelper:
     def __init__(self) -> None:
         pass
 
-    def __graph_dict_to_nx_graph(self, graph_dict: dict):
+    def graph_dict_to_nx_graph(self, graph_dict: dict):
         """
         Constructs a NetworkX graph object from the given graph dictionary.
 
