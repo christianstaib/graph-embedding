@@ -12,17 +12,6 @@ Subpackages
    graphtoolbox.helpers
    graphtoolbox.random_walkers
 
-Submodules
-----------
-
-graphtoolbox.simple\_embedder module
-------------------------------------
-
-.. automodule:: graphtoolbox.simple_embedder
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 Module contents
 ---------------
 
