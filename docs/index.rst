@@ -13,6 +13,7 @@ We will *embed* graphs of unknown size with arbitrary features into an n-dimensi
    introduction/installation
    introduction/how-to
    introduction/terms_and_definitions
+   introduction/Dataset
 
 .. toctree::
    :glob:
