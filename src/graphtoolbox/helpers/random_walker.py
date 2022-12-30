@@ -78,6 +78,3 @@ class RandomWalker:
             walks.append(walk)
 
         return walks
-
-    def dummy_function(self):
-        return 1

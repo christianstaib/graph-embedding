@@ -18,6 +18,3 @@ class SimpleEmbedder:
         """
         print('get_embedding')
         pass
-
-    def dummy_function(self):
-        return 1

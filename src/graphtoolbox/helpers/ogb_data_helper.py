@@ -87,6 +87,3 @@ class OgbDataHelper:
         }
 
         return dataset_dict
-
-    def dummy_function(self):
-        return 1
