@@ -123,142 +123,17 @@ not not support edge attributes.</p>
 </dd></dl>
 
 </section>
-<section id="module-graphtoolbox.helpers.ogb_data_helper">
-<span id="graphtoolbox-helpers-ogb-data-helper-module"></span><h2>graphtoolbox.helpers.ogb_data_helper module<a class="headerlink" href="#module-graphtoolbox.helpers.ogb_data_helper" title="Permalink to this heading"></a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="graphtoolbox.helpers.ogb_data_helper.OgbDataHelper">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">graphtoolbox.helpers.ogb_data_helper.</span></span><span class="sig-name descname"><span class="pre">OgbDataHelper</span></span><a class="reference internal" href="../_modules/graphtoolbox/helpers/ogb_data_helper.html#OgbDataHelper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.helpers.ogb_data_helper.OgbDataHelper" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="graphtoolbox.helpers.ogb_data_helper.OgbDataHelper.dummy_function">
-<span class="sig-name descname"><span class="pre">dummy_function</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/graphtoolbox/helpers/ogb_data_helper.html#OgbDataHelper.dummy_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.helpers.ogb_data_helper.OgbDataHelper.dummy_function" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="graphtoolbox.helpers.ogb_data_helper.OgbDataHelper.get_nx_graph">
-<span class="sig-name descname"><span class="pre">get_nx_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/graphtoolbox/helpers/ogb_data_helper.html#OgbDataHelper.get_nx_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.helpers.ogb_data_helper.OgbDataHelper.get_nx_graph" title="Permalink to this definition"></a></dt>
-<dd><p>Constructs a NetworkX graph object from the given graph dictionary.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>graph_dict</strong> – A dictionary representing a graph, with the following</p></li>
-<li><p><strong>keys</strong> – <ul>
-<li><p>‘num_nodes’: The number of nodes in the graph.</p></li>
-<li><p>’node_feat’: A list of node features, with one feature vector
-per node.</p></li>
-<li><p>’edge_index’: An edge index array of shape (2, E), where E is
-the number of edges.</p></li>
-<li><p>’edge_feat’: A list of edge features, with one feature vector
-per edge.</p></li>
-</ul>
-</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A NetworkX graph object with nodes and edges corresponding to the
-input graph.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
+<section id="graphtoolbox-helpers-ogb-data-helper-module">
+<h2>graphtoolbox.helpers.ogb_data_helper module<a class="headerlink" href="#graphtoolbox-helpers-ogb-data-helper-module" title="Permalink to this heading"></a></h2>
 </section>
-<section id="module-graphtoolbox.helpers.random_walker">
-<span id="graphtoolbox-helpers-random-walker-module"></span><h2>graphtoolbox.helpers.random_walker module<a class="headerlink" href="#module-graphtoolbox.helpers.random_walker" title="Permalink to this heading"></a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="graphtoolbox.helpers.random_walker.RandomWalker">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">graphtoolbox.helpers.random_walker.</span></span><span class="sig-name descname"><span class="pre">RandomWalker</span></span><a class="reference internal" href="../_modules/graphtoolbox/helpers/random_walker.html#RandomWalker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.helpers.random_walker.RandomWalker" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="graphtoolbox.helpers.random_walker.RandomWalker.dummy_function">
-<span class="sig-name descname"><span class="pre">dummy_function</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/graphtoolbox/helpers/random_walker.html#RandomWalker.dummy_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.helpers.random_walker.RandomWalker.dummy_function" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="graphtoolbox.helpers.random_walker.RandomWalker.one_random_walk">
-<span class="sig-name descname"><span class="pre">one_random_walk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/graphtoolbox/helpers/random_walker.html#RandomWalker.one_random_walk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.helpers.random_walker.RandomWalker.one_random_walk" title="Permalink to this definition"></a></dt>
-<dd><p>Performs one random walk on a given graph.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>graph</strong> (<em>nx.Graph</em>) – Graph on which the random walk shall be done.</p></li>
-<li><p><strong>limit_length</strong> (<em>bool</em><em>, </em><em>optional</em>) – Indicates if the length of the walk
-is limited. Wether the length is limited or not, the random
-walk stops once a vertex is visited a second time. Defaults to
-False.</p></li>
-<li><p><strong>max_length</strong> (<em>int</em><em>, </em><em>optional</em>) – Max length of random walk. Defaults to
-None.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>List of vertex IDs visited by the random walk.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>List[int]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="graphtoolbox.helpers.random_walker.RandomWalker.random_walks">
-<span class="sig-name descname"><span class="pre">random_walks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_walks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/graphtoolbox/helpers/random_walker.html#RandomWalker.random_walks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.helpers.random_walker.RandomWalker.random_walks" title="Permalink to this definition"></a></dt>
-<dd><p>Performs num_walks many random walks on a given graph.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>graph</strong> (<em>nx.Graph</em>) – Graph on which the random walks shall be done.
-num_walks (int): Number of walks to be performed on the graph.
-limit_length (bool, optional): Indicates if the length of the
-walk is limited. Wether the length is limited or not, the
-random walk stops once a vertex is visited a second time.
-Defaults to False.</p></li>
-<li><p><strong>max_length</strong> (<em>int</em><em>, </em><em>optional</em>) – Max length of random walk. Defaults to
-None.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><dl class="simple">
-<dt>List of List of vertex IDs visited by the random</dt><dd><p>walks.</p>
-</dd>
-</dl>
-</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>List[List[int]]</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
+<section id="graphtoolbox-helpers-random-walker-module">
+<h2>graphtoolbox.helpers.random_walker module<a class="headerlink" href="#graphtoolbox-helpers-random-walker-module" title="Permalink to this heading"></a></h2>
 </section>
-<section id="module-graphtoolbox.helpers.walks_to_string_helper">
-<span id="graphtoolbox-helpers-walks-to-string-helper-module"></span><h2>graphtoolbox.helpers.walks_to_string_helper module<a class="headerlink" href="#module-graphtoolbox.helpers.walks_to_string_helper" title="Permalink to this heading"></a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="graphtoolbox.helpers.walks_to_string_helper.WalksToStringHelper">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">graphtoolbox.helpers.walks_to_string_helper.</span></span><span class="sig-name descname"><span class="pre">WalksToStringHelper</span></span><a class="reference internal" href="../_modules/graphtoolbox/helpers/walks_to_string_helper.html#WalksToStringHelper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.helpers.walks_to_string_helper.WalksToStringHelper" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="graphtoolbox.helpers.walks_to_string_helper.WalksToStringHelper.get_document">
-<span class="sig-name descname"><span class="pre">get_document</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">walks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replace_dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/graphtoolbox/helpers/walks_to_string_helper.html#WalksToStringHelper.get_document"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.helpers.walks_to_string_helper.WalksToStringHelper.get_document" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="graphtoolbox.helpers.walks_to_string_helper.WalksToStringHelper.get_replace_dict">
-<span class="sig-name descname"><span class="pre">get_replace_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attributed</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/graphtoolbox/helpers/walks_to_string_helper.html#WalksToStringHelper.get_replace_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.helpers.walks_to_string_helper.WalksToStringHelper.get_replace_dict" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="graphtoolbox.helpers.walks_to_string_helper.WalksToStringHelper.walks_to_string">
-<span class="sig-name descname"><span class="pre">walks_to_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">walks</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/graphtoolbox/helpers/walks_to_string_helper.html#WalksToStringHelper.walks_to_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.helpers.walks_to_string_helper.WalksToStringHelper.walks_to_string" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
+<section id="graphtoolbox-helpers-walks-to-string-helper-module">
+<h2>graphtoolbox.helpers.walks_to_string_helper module<a class="headerlink" href="#graphtoolbox-helpers-walks-to-string-helper-module" title="Permalink to this heading"></a></h2>
 </section>
-<section id="module-graphtoolbox.helpers">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-graphtoolbox.helpers" title="Permalink to this heading"></a></h2>
+<section id="module-contents">
+<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this heading"></a></h2>
 </section>
 </section>
 
