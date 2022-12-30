@@ -136,8 +136,30 @@ not not support edge attributes.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="graphtoolbox.helpers.ogb_data_helper.OgbDataHelper.get_nx_graph">
-<span class="sig-name descname"><span class="pre">get_nx_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/graphtoolbox/helpers/ogb_data_helper.html#OgbDataHelper.get_nx_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.helpers.ogb_data_helper.OgbDataHelper.get_nx_graph" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">get_nx_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/graphtoolbox/helpers/ogb_data_helper.html#OgbDataHelper.get_nx_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.helpers.ogb_data_helper.OgbDataHelper.get_nx_graph" title="Permalink to this definition"></a></dt>
+<dd><p>Constructs a NetworkX graph object from the given graph dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph_dict</strong> – A dictionary representing a graph, with the following</p></li>
+<li><p><strong>keys</strong> – <ul>
+<li><p>‘num_nodes’: The number of nodes in the graph.</p></li>
+<li><p>’node_feat’: A list of node features, with one feature vector
+per node.</p></li>
+<li><p>’edge_index’: An edge index array of shape (2, E), where E is
+the number of edges.</p></li>
+<li><p>’edge_feat’: A list of edge features, with one feature vector
+per edge.</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A NetworkX graph object with nodes and edges corresponding to the
+input graph.</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
