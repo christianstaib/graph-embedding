@@ -41,26 +41,19 @@ class GraphHelper():
         new_graph = nx.Graph()
         max_node = max(list(graph.nodes))
 
-        # copy nodes
         for node in nx.nodes(graph):
             new_graph.add_node(node)
 
-            # copy node attributes
             features = graph.nodes[node]
             new_graph.nodes[node].update(features)
 
-        # add new nodes and their edges
         for u, v in nx.edges(graph):
-            # new nodes are numbered starting from max(list(graph.nodes)) + 1
             max_node += 1
 
-            # replace edge (u, v) with edges (u, max_node), (max_node, v) and
-            # node max_node
             new_graph.add_node(max_node)
             new_graph.add_edge(u, max_node)
             new_graph.add_edge(max_node, v)
 
-            # copy edge attributes from (u, v) to node max_node
             features = graph.edges[u, v]
             new_graph.nodes[max_node].update(features)
 
