@@ -12,30 +12,6 @@ graphtoolbox.helpers.graph\_helper module
    :undoc-members:
    :show-inheritance:
 
-graphtoolbox.helpers.ogb\_data\_helper module
----------------------------------------------
-
-.. automodule:: graphtoolbox.helpers.ogb_data_helper
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-graphtoolbox.helpers.random\_walker module
-------------------------------------------
-
-.. automodule:: graphtoolbox.helpers.random_walker
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-graphtoolbox.helpers.walks\_to\_string\_helper module
------------------------------------------------------
-
-.. automodule:: graphtoolbox.helpers.walks_to_string_helper
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 Module contents
 ---------------
 

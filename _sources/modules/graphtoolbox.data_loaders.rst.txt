@@ -1,0 +1,21 @@
+graphtoolbox.data\_loaders package
+==================================
+
+Submodules
+----------
+
+graphtoolbox.data\_loaders.ogb\_data\_loader module
+---------------------------------------------------
+
+.. automodule:: graphtoolbox.data_loaders.ogb_data_loader
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: graphtoolbox.data_loaders
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -7,8 +7,10 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
+   graphtoolbox.data_loaders
    graphtoolbox.graph_embedding
    graphtoolbox.helpers
+   graphtoolbox.random_walkers
 
 Submodules
 ----------
