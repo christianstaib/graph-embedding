@@ -156,15 +156,15 @@ not not support edge attributes.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="graphtoolbox.helpers.random_walker.RandomWalker.one_random_walk">
 <span class="sig-name descname"><span class="pre">one_random_walk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/graphtoolbox/helpers/random_walker.html#RandomWalker.one_random_walk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphtoolbox.helpers.random_walker.RandomWalker.one_random_walk" title="Permalink to this definition"></a></dt>
-<dd><p>Performs a random walk on a graph</p>
+<dd><p>Performs one random walk on a given graph.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>graph</strong> (<em>nx.Graph</em>) – Graph on which the random walk shall be done.
-limit_length (bool, optional): Indicates if the length of the
-walk is limited. Wether the length is limited or not, the
-random walk stops once a vertex is visited a second time.
-Defaults to False.</p></li>
+<li><p><strong>graph</strong> (<em>nx.Graph</em>) – Graph on which the random walk shall be done.</p></li>
+<li><p><strong>limit_length</strong> (<em>bool</em><em>, </em><em>optional</em>) – Indicates if the length of the walk
+is limited. Wether the length is limited or not, the random
+walk stops once a vertex is visited a second time. Defaults to
+False.</p></li>
 <li><p><strong>max_length</strong> (<em>int</em><em>, </em><em>optional</em>) – Max length of random walk. Defaults to
 None.</p></li>
 </ul>

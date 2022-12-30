@@ -85,32 +85,35 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">graph</span><span class="p">:</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">,</span>
         <span class="n">limit_length</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="n">max_length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type:ignore</span>
+        <span class="n">max_length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;Performs a random walk on a graph</span>
+        <span class="sd">&quot;&quot;&quot;Performs one random walk on a given graph.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            graph (nx.Graph): Graph on which the random walk shall be done.</span>
-<span class="sd">                limit_length (bool, optional): Indicates if the length of the</span>
-<span class="sd">                walk is limited. Wether the length is limited or not, the</span>
-<span class="sd">                random walk stops once a vertex is visited a second time.</span>
-<span class="sd">                Defaults to False.</span>
+<span class="sd">            limit_length (bool, optional): Indicates if the length of the walk</span>
+<span class="sd">                is limited. Wether the length is limited or not, the random</span>
+<span class="sd">                walk stops once a vertex is visited a second time. Defaults to</span>
+<span class="sd">                False.</span>
 <span class="sd">            max_length (int, optional): Max length of random walk. Defaults to</span>
 <span class="sd">                None.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            List[int]: List of vertex IDs visited by the random walk.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-
         <span class="n">walk</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">walk</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">())))</span>
+        <span class="n">start_node</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()))</span>
+        <span class="n">walk</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_node</span><span class="p">)</span>
 
         <span class="k">while</span> <span class="p">(</span><span class="ow">not</span> <span class="n">limit_length</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">walk</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">max_length</span><span class="p">):</span>
-            <span class="n">neighborhood</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">walk</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
-            <span class="n">neighborhood</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">neighborhood</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">walk</span><span class="p">))</span>
-            <span class="k">if</span> <span class="n">neighborhood</span><span class="p">:</span>
-                <span class="n">walk</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">neighborhood</span><span class="p">))</span>
+            <span class="n">neighbors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">walk</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+            <span class="n">unvisited_neighbors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">neighbors</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">walk</span><span class="p">))</span>
+
+            <span class="k">if</span> <span class="n">unvisited_neighbors</span><span class="p">:</span>
+                <span class="n">next_node</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">unvisited_neighbors</span><span class="p">)</span>
+                <span class="n">walk</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">next_node</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># If there are no more neighbors to visit, end the walk</span>
                 <span class="k">break</span>
 
         <span class="k">return</span> <span class="n">walk</span></div>
