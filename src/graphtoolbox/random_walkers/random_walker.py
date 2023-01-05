@@ -10,19 +10,21 @@ class RandomWalker:
     def one_random_walk(
         self,
         graph: nx.Graph,
-        limit_length: bool = False,
-        max_length: int = None
+        how_often_visited: List[int]
     ) -> List[int]:
         walk = []
-        start_node = random.choice(range(graph.number_of_nodes()))
+        nodes = range(graph.number_of_nodes())
+        start_node = nodes.index(min(nodes))
         walk.append(start_node)
 
-        while (not limit_length) or (len(walk) < max_length):
+        while True:
             neighbors = list(graph.neighbors(walk[-1]))
             unvisited_neighbors = list(set(neighbors) - set(walk))
 
             if unvisited_neighbors:
+                #next_node = random.choice(unvisited_neighbors)
                 next_node = random.choice(unvisited_neighbors)
+                how_often_visited[next_node] += 1
                 walk.append(next_node)
             else:
                 # If there are no more neighbors to visit, end the walk
@@ -33,17 +35,16 @@ class RandomWalker:
     def random_walks(
         self,
         graph: nx.Graph,
-        num_walks: int,
-        limit_length: bool = False,
-        max_length: int = None  # type:ignore
+        num_walks: int
     ) -> List[List[int]]:
         walks = []
 
+        how_often_visited = [0] * graph.number_of_nodes()
+
         for _ in range(num_walks):
             walk = self.one_random_walk(
-                graph,
-                limit_length,
-                max_length)
+                graph=graph,
+                how_often_visited=how_often_visited)
             walks.append(walk)
 
         return walks

@@ -2,6 +2,7 @@ import networkx as nx
 import numpy as np
 from ogb.graphproppred import GraphPropPredDataset
 from tqdm import tqdm
+import logging
 
 
 class OgbDataLoader:
@@ -53,6 +54,7 @@ class OgbDataLoader:
         dataset = GraphPropPredDataset(name=dataset_name)
         split_idx = dataset.get_idx_split()
 
+        logging.info(f'Start to process {dataset_name} dataset.')
         features, labels = [], []
         for graph_dict, label in tqdm(dataset):
             features.append(self.graph_dict_to_nx_graph(graph_dict))

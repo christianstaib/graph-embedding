@@ -5,34 +5,34 @@ class WalksToStringHelper:
     def __init__(self) -> None:
         pass
 
-    def walks_to_string(self, walks):
-        SENTENCE_END_SYMBOL = ' END '
-        WORD_END_SYMBOL = ' '
+    def walks_to_strings(self, walks):
+        strings = []
 
-        the_string = SENTENCE_END_SYMBOL.join(
-            [WORD_END_SYMBOL.join([f'_{str(num)}_' for num in walk]) for walk in walks])
+        for walk in walks:
+            walk_as_string = ' '.join([f'_{str(vertex)}_' for vertex in walk])
+            strings.append(walk_as_string)
 
-        return the_string
+        return strings
 
-    def get_replace_dict(self, graph, attributed):
+    def get_replace_dict(self, graph):
         replace_dict = dict()
 
-        if attributed:
-            for node in range(graph.number_of_nodes()):
-                replace_dict['_' + str(node) + '_'] = ','.join([str(num)
-                                                                for num in graph.nodes[node]['feature']])
-        else:
-            for node in range(graph.number_of_nodes()):
-                replace_dict['_' + str(node) + '_'] = str(graph.degree[node])
+        for node in range(graph.number_of_nodes()):
+            key = '_' + str(node) + '_'
+            value = ','.join([str(num) for num in graph.nodes[node]['feature']])
+
+            replace_dict[key] = value
 
         return replace_dict
 
-    def get_document(self, walks, replace_dict):
-        walks = self.walks_to_string(walks)
+    def get_documents(self, strings, replace_dict):
+        strings = self.walks_to_strings(strings)
 
-        pattern = '|'.join(sorted(re.escape(k) for k in replace_dict))
+        documents = []
 
-        the_better_string = re.sub(pattern, lambda m: replace_dict.get(
-            m.group(0).upper()), walks, flags=re.IGNORECASE)
+        for string in strings:
+            for key, value in replace_dict.items():
+                string = re.sub(key, value, string)
+            documents.append(string)
 
-        return (the_better_string)
+        return documents
