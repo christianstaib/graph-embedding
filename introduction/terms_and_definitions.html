@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Terms and definitions &mdash; graph-embedding  documentation</title>
@@ -11,10 +11,8 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -30,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> graph-embedding
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            graph-embedding
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -65,7 +67,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Terms and definitions</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/introduction/terms_and_definitions.rst.txt" rel="nofollow"> View page source</a>
@@ -78,7 +80,7 @@
              
   <section id="terms-and-definitions">
 <h1>Terms and definitions<a class="headerlink" href="#terms-and-definitions" title="Permalink to this heading"></a></h1>
-<p>A graph is a tuple <span class="math notranslate nohighlight">\(G = (V, E, A_V, A_E)\)</span>. <span class="math notranslate nohighlight">\(V\)</span> is the set of vertices. <span class="math notranslate nohighlight">\(E\)</span> is the set of edges. We don’t differentiate between directed and undirected between graphs but expect that there is at most one edge between two vertices. <span class="math notranslate nohighlight">\(A_V \colon \)</span> are the attributes of the vertices and edges.</p>
+<p>A graph is a tuple <span class="math notranslate nohighlight">\(G = (V, E, A_V, A_E)\)</span>. <span class="math notranslate nohighlight">\(V\)</span> is the set of vertices. <span class="math notranslate nohighlight">\(E\)</span> is the set of edges. We don’t differentiate between directed and undirected between graphs but expect that there is at most one edge between two vertices. <span class="math notranslate nohighlight">\(A_V \colon `, :math:`A_E\)</span> are the attributes of the vertices and edges.</p>
 <p>For now we limit the allowed attributes to a list of numbers and strings.</p>
 <p>A <cite>path</cite> in a graph is a list of vertices where two adjacent vertices in the list are also adjacent in the graph. We define the <cite>length</cite> of a path as the length of the list of vertices.</p>
 <p>A <cite>random walk</cite> is a <cite>path</cite> that is build with a random selection of vertices. Random doesn’t necessarily mean equal distributed.</p>
