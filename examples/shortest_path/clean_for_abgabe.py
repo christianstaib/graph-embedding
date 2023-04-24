@@ -53,7 +53,7 @@ def substitute_nodes_with_features(shortest_path, graph):
 def write_paths_to_file(dataset):
     start_line = 1
     line = 1
-    with open('rows.txt', 'w') as f_rows, open('shortest_paths.txt', 'w') as f_paths:
+    with open('rows.cor', 'w') as f_rows, open('shortest_paths.cor', 'w') as f_paths:
         for i, (graph_dict, label) in enumerate(tqdm(dataset)):
             graph = graph_dict_to_nx_graph(graph_dict)
             shortest_paths = get_shortest_paths(graph)
@@ -72,7 +72,7 @@ split_idx = dataset.get_idx_split()
 
 write_paths_to_file(dataset)
 
-model = Doc2Vec(corpus_file='shortest_paths.txt')
+model = Doc2Vec(corpus_file='shortest_paths.cor')
 
 train_X = np.array([model.dv[x] for x in split_idx['train']])
 train_y = np.array([dataset[x][1] for x in split_idx['train']]).ravel()
