@@ -23,7 +23,7 @@ def graph_dict_to_nx_graph(
         features = graph_dict['edge_feat'][node_number]
         graph.add_edge(from_node, to_node, bond_type=features[0])
 
-    subgraph_hashes = nx.weisfeiler_lehman_subgraph_hashes(graph, iterations=2, node_attr="atomic_num", edge_attr="bond_type")
+    subgraph_hashes = nx.weisfeiler_lehman_subgraph_hashes(graph, iterations=1, node_attr="atomic_num", edge_attr="bond_type")
 
     for node, list_hash in subgraph_hashes.items():
         graph.nodes[node]["atomic_num"] = list_hash[-1]
@@ -36,7 +36,7 @@ def get_shortest_paths(graph):
 
     shortest_path_dict = dict(nx.all_pairs_shortest_path(graph))
 
-    for _ in range(10):
+    for _ in range(100):
         source = random.choice(list(graph.nodes))
         target = random.choice(list(graph.nodes))
         if nx.has_path(graph, source, target):

@@ -8,7 +8,7 @@ from tqdm import tqdm
 import random
 
 
-feat_to_include = range(9)
+feat_to_include = [7]#[0, 1, 3, 4, 5, 8]
 
 def graph_dict_to_nx_graph(
     graph_dict: dict
@@ -69,7 +69,7 @@ def write_paths_to_file(dataset):
 
 results = []
 
-for _ in tqdm(range(100)):
+for _ in tqdm(range(250)):
     dataset_name = 'ogbg-molfreesolv'
     dataset = GraphPropPredDataset(name=dataset_name)
     split_idx = dataset.get_idx_split()
@@ -78,17 +78,16 @@ for _ in tqdm(range(100)):
 
     model = Doc2Vec(corpus_file='shortest_paths.cor', window=5*len(feat_to_include))
 
-    train_X = np.array([model.dv[x] for x in split_idx['train']])
+    X = [np.random.rand(*model.dv[0].shape) for _ in range(len(dataset))]
+
+    train_X = np.array([X[x] for x in split_idx['train']])
     train_y = np.array([dataset[x][1] for x in split_idx['train']]).ravel()
 
-    test_X = np.array([model.dv[x] for x in split_idx['test']])
+    test_X = np.array([X[x] for x in split_idx['test']])
     test_y = np.array([dataset[x][1] for x in split_idx['test']]).ravel()
 
-    valid_X = np.array([model.dv[x] for x in split_idx['valid']])
+    valid_X = np.array([X[x] for x in split_idx['valid']])
     valid_y = np.array([dataset[x][1] for x in split_idx['valid']]).ravel()
-
-    train_X.shape, train_y.shape
-
 
     reg = RandomForestRegressor()
     reg.fit(train_X, train_y)
@@ -104,5 +103,4 @@ for _ in tqdm(range(100)):
 
     results.append(result_dict["rmse"])
 
-print('all pair shortest path:' + str(sum(results)/len(results)))
-print(results)
+print('random vectors:' + str(sum(results)/len(results)))
