@@ -47,10 +47,17 @@ def get_shortest_paths(graph):
 
 def substitute_nodes_with_features(shortest_path, graph):
     path_str = []
-    for node_id in shortest_path:
+    for position_in_walk, node_id in enumerate(shortest_path):
         for j, feat in enumerate(vertex_feat_to_include):
-            path_str.append(f'{j}_{graph.nodes[node_id]["feature"][feat]}')
+            path_str.append(f'v{j}_{graph.nodes[node_id]["feature"][feat]}')
         path_str.append('EOW')
+
+        if position_in_walk != len(shortest_path)-1:
+            for j, feat in enumerate(edge_feat_to_include):
+                path_str.append(
+                    f'e{j}_{graph.edges[(shortest_path[position_in_walk], shortest_path[position_in_walk+1])]["feature"][feat]}')
+            path_str.append('EOW')
+
     path_str = ' '.join(path_str)
     return path_str
 
