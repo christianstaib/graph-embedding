@@ -62,7 +62,9 @@ def write_paths_to_file(dataset):
                 path_str = substitute_nodes_with_features(shortest_path, graph)
                 f_paths.write(path_str + " STOP ")
                 line += 1
-            f_paths.write("\n")
+
+            if i != len(dataset) - 1:
+                f_paths.write("\n")
             f_rows.write(str(start_line) + " " + str(line - 1) + "\n")
             start_line = line
 

@@ -11,7 +11,20 @@ from tqdm import tqdm
 from gensim.test.utils import get_tmpfile
 import random
 
-vertex_feat_to_include = range(9)
+vertex_feature_names = [
+    "atomic_num",  # 0
+    "chirality",  # 1
+    "degree",  # 2
+    "formal_charge",  # 3
+    "num_h",  # 4
+    "num_rad_e",  # 5
+    "hybridization",  # 6
+    "is_aromatic",  # 7
+    "is_in_ring",  # 8
+    "handmade_degree",  # 9
+]
+
+vertex_feat_to_include = range(10)
 edge_feat_to_include = range(3)
 
 
@@ -28,10 +41,16 @@ def graph_dict_to_nx_graph(graph_dict: dict):
         features = graph_dict["edge_feat"][node_number]
         graph.add_edge(from_node, to_node, feature=features)
 
+    # append node degree as feature
+    for node in graph.nodes:
+        graph.nodes[node]["feature"] = np.append(
+            graph.nodes[node]["feature"], graph.degree[node]
+        )
+
     return graph
 
 
-def get_random_samples(input_list, num_samples=100):
+def get_random_samples(input_list, num_samples):
     if len(input_list) > num_samples:
         return random.sample(input_list, num_samples)
     else:
@@ -50,7 +69,7 @@ def get_shortest_paths(graph):
                 if len(shortest_path) >= 2:
                     shortest_paths.append(shortest_path)
 
-    return get_random_samples(shortest_paths, 100)
+    return get_random_samples(shortest_paths, 100000)
 
 
 def substitute_nodes_with_features(shortest_path, graph):
@@ -122,16 +141,21 @@ def write_paths_to_file(dataset, mode):
 if __name__ == "__main__":
     results = []
 
-    for _ in tqdm(range(10)):
+    for _ in range(3):
         dataset_name = "ogbg-molfreesolv"
         dataset = GraphPropPredDataset(name=dataset_name)
         split_idx = dataset.get_idx_split()
 
         write_paths_to_file(dataset, "w")
 
+        # fill data
+        fill_dataset_name = "ogbg-molhiv"
+        fill_dataset = GraphPropPredDataset(name=fill_dataset_name)
+        write_paths_to_file(list(fill_dataset)[:2000], "a")
+
         model = Doc2Vec(
             corpus_file="data\shortest_paths.cor",
-            window=5 * (len(vertex_feat_to_include) + len(edge_feat_to_include)),
+            window=2 * (len(vertex_feat_to_include) + len(edge_feat_to_include)),
         )
 
         fname = get_tmpfile("my_doc2vec_model")
