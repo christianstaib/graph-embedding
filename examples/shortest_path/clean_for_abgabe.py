@@ -46,20 +46,21 @@ def substitute_nodes_with_features(shortest_path, graph):
     for node_id in shortest_path:
         for j, feat in enumerate(feat_to_include):
             path_str.append(f'{j}_{graph.nodes[node_id]["feature"][feat]}')
+        path_str.append('EOW')
     path_str = ' '.join(path_str)
     return path_str
 
 
-def write_paths_to_file(dataset):
+def write_paths_to_file(dataset, dataset_name):
     start_line = 1
     line = 1
-    with open('rows.cor', 'w') as f_rows, open('shortest_paths.cor', 'w') as f_paths:
+    with open(f'{dataset_name}_rows.cor', 'w') as f_rows, open(f'{dataset_name}_shortest_paths.cor', 'w') as f_paths:
         for i, (graph_dict, label) in enumerate(tqdm(dataset)):
             graph = graph_dict_to_nx_graph(graph_dict)
             shortest_paths = get_shortest_paths(graph)
             for shortest_path in shortest_paths:
                 path_str = substitute_nodes_with_features(shortest_path, graph)
-                f_paths.write(path_str + " STOP ")
+                f_paths.write(path_str + " EOS ")
                 line += 1
             f_paths.write("\n")
             f_rows.write(str(start_line) + " " + str(line-1) + '\n')
@@ -70,7 +71,7 @@ dataset_name = 'ogbg-molfreesolv'
 dataset = GraphPropPredDataset(name=dataset_name)
 split_idx = dataset.get_idx_split()
 
-write_paths_to_file(dataset)
+write_paths_to_file(dataset, dataset_name)
 
 model = Doc2Vec(corpus_file='shortest_paths.cor')
 
