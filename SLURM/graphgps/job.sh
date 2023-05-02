@@ -4,6 +4,7 @@
 #SBATCH --output=out.txt
 #SBATCH --error=err.txt
 #SBATCH --container-image ubuntu:latest
+#SBATCH --container-name ubuntu
 #SBATCH --container-mount-home
 #SBATCH --container-writable
 
@@ -11,6 +12,7 @@
 #enroot start --root --rw ubuntu+latest bash
 pwd
 ls -al
+apt-get update && apt-get upgrade -y
 apt-get install wget
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
 bash ~/miniconda.sh -b -p
