@@ -3,10 +3,9 @@
 #SBATCH --mem=128000
 #SBATCH --output=out.txt
 #SBATCH --error=err.txt
-#SBATCH --container-image ~/ubunut+latest.sqsh
+#SBATCH --container-image ubuntu:latest
 #SBATCH --container-mount-home
-#SBATCH --container-writeable
-#SBATCH --container-readable
+#SBATCH --container-writable
 
 #-m $HOME/c-mount:/GraphGPS -m $HOME/.local/share/enroot/ubuntu+latest/root/miniconda3/envs/gps:/GraphGPS/gps
 #enroot start --root --rw ubuntu+latest bash
