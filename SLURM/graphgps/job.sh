@@ -5,4 +5,4 @@
 #SBATCH --output=out.txt
 #SBATCH --error=err.txt
 
-enroot start --root --rw -m $HOME/graph-embedding/GraphGPS:/GraphGPS -m $HOME/.local/share/enroot/ubuntu+latest/root/miniconda3/envs/gps:/GraphGPS/gps ubuntu+latest enroot_job.sh
+enroot start --root --rw -m $HOME/graph-embedding/GraphGPS:/GraphGPS -m $HOME/conda_gps:/GraphGPS/gps -m $HOME/graph-embedding/SLURM/graphgps/enroot_job.sh:/root/enroot_job.sh ubuntu+latest sh /root/enroot_job.sh
