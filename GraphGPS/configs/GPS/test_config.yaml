@@ -1,43 +1,41 @@
 out_dir: results
-metric_best: mae
-metric_agg: argmin
+metric_best: auc
 wandb:
   use: True
-  project: ZINC
+  project: molhiv
 dataset:
-  format: PyG-ZINC
-  name: subset
+  format: OGB
+  name: ogbg-molhiv
   task: graph
-  task_type: regression
+  task_type: classification
   transductive: False
   node_encoder: True
-  node_encoder_name: TypeDictNode+RWSE
-  node_encoder_num_types: 28
+  node_encoder_name: Atom
   node_encoder_bn: False
   edge_encoder: True
-  edge_encoder_name: TypeDictEdge
-  edge_encoder_num_types: 4
+  edge_encoder_name: Bond
   edge_encoder_bn: False
 posenc_HIG:
   enable: True
+  loss : 1.0
+  nodes_interpolated: 1
+  minimum_node_size: 1
 train:
   mode: custom
   batch_size: 32
   eval_period: 1
-  enable_ckpt: True  # Checkpointing can now be disabled to save I/O when e.g. just benchmarking.
-  ckpt_best: True  # WARNING: Checkpoint every epoch a better model is found may increase I/O significantly.
-#  ckpt_period: 100  # Follow set checkpointing schedule
+  ckpt_period: 100
 model:
   type: GPSModel
-  loss_fun: l1
+  loss_fun: cross_entropy
   edge_decoding: dot
-  graph_pooling: add
+  graph_pooling: mean
 gt:
-  layer_type: GINE+Transformer
+  layer_type: CustomGatedGCN+Transformer
   layers: 10
   n_heads: 4
   dim_hidden: 64  # `gt.dim_hidden` must match `gnn.dim_inner`
-  dropout: 0.0
+  dropout: 0.05
   attn_dropout: 0.5
   layer_norm: False
   batch_norm: True
@@ -55,7 +53,7 @@ optim:
   clip_grad_norm: True
   optimizer: adamW
   weight_decay: 1e-5
-  base_lr: 0.001
-  max_epoch: 10
+  base_lr: 0.0001
+  max_epoch: 100
   scheduler: cosine_with_warmup
-  num_warmup_epochs: 10
+  num_warmup_epochs: 5
