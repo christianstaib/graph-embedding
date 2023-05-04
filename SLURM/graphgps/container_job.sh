@@ -2,8 +2,9 @@
 #SBATCH --partition=fat
 #SBATCH --time=240
 #SBATCH --mem=128000
-#SBATCH --container-image=./ubuntu+latest
-#SBATCH --container-mounts=/etc/slurm/task_prolog:/etc/slurm/task_prolog,/scratch:/scratch,./graph-embedding:/GraphGPS,./.local/share/enroot/ubuntu+latest/root/miniconda3/envs/gps:/GraphGPS/gps
+#SBATCH --container-image=./ubuntu+latest.sqsh
+#SBATCH --container-mounts=/etc/slurm/task_prolog:/etc/slurm/task_prolog,/scratch:/scratch,./graph-embedding:/GraphGPS,./conda_gps:/GraphGPS/gps
+#SBATCH --container-writable
 #SBATCH --output=out.txt
 #SBATCH --error=err.txt
 
