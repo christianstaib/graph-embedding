@@ -1,6 +1,5 @@
 from ogb.graphproppred import Evaluator, GraphPropPredDataset
 
-import multiprocessing
 from multiprocessing import Pool
 
 import networkx as nx
@@ -8,8 +7,10 @@ import numpy as np
 from gensim.models.doc2vec import Doc2Vec
 from sklearn.ensemble import RandomForestRegressor
 from tqdm import tqdm
-from gensim.test.utils import get_tmpfile
 import random
+
+cpu_count = 16
+sample_size = 10000
 
 vertex_feature_names = [
     "atomic_num",  # 0
@@ -69,7 +70,7 @@ def get_shortest_paths(graph):
                 if len(shortest_path) >= 2:
                     shortest_paths.append(shortest_path)
 
-    return get_random_samples(shortest_paths, 100000)
+    return get_random_samples(shortest_paths, sample_size)
 
 
 def substitute_nodes_with_features(shortest_path, graph):
@@ -126,10 +127,8 @@ def write_paths_to_file(dataset, mode):
     with open("data/rows.cor", mode) as f_rows, open(
         "data/shortest_paths.cor", mode
     ) as f_paths:
-        with Pool(multiprocessing.cpu_count()) as pool:
-            for paths in tqdm(
-                pool.imap(process_dict_label_tuple, dataset), total=len(dataset)
-            ):
+        with Pool(cpu_count) as pool:
+            for paths in pool.imap(process_dict_label_tuple, dataset):
                 for path_str in paths:
                     f_paths.write(path_str + " EOS ")
                     line += 1
@@ -141,25 +140,18 @@ def write_paths_to_file(dataset, mode):
 if __name__ == "__main__":
     results = []
 
-    for _ in range(3):
+    for _ in tqdm(range(3)):
         dataset_name = "ogbg-molfreesolv"
         dataset = GraphPropPredDataset(name=dataset_name)
         split_idx = dataset.get_idx_split()
 
         write_paths_to_file(dataset, "w")
 
-        # fill data
-        fill_dataset_name = "ogbg-molhiv"
-        fill_dataset = GraphPropPredDataset(name=fill_dataset_name)
-        write_paths_to_file(list(fill_dataset)[:2000], "a")
-
         model = Doc2Vec(
-            corpus_file="data\shortest_paths.cor",
+            corpus_file="data/shortest_paths.cor",
             window=2 * (len(vertex_feat_to_include) + len(edge_feat_to_include)),
+            workers=cpu_count,
         )
-
-        fname = get_tmpfile("my_doc2vec_model")
-        model.save(fname)
 
         train_X = np.array([model.dv[x] for x in split_idx["train"]])
         train_y = np.array([dataset[x][1] for x in split_idx["train"]]).ravel()
@@ -184,5 +176,5 @@ if __name__ == "__main__":
 
         results.append(result_dict["rmse"])
 
-    print("all pair shortest path:" + str(sum(results) / len(results)))
+    print(f"{dataset_name}: all pair shortest path: {sum(results) / len(results)}")
     print(results)
