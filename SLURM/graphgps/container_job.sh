@@ -1,13 +1,14 @@
 #!/bin/sh
 #SBATCH --partition=gpu_4
 #SBATCH --gres=gpu:4
+#SBATCH --nodes=14
 #SBATCH --time=720
 #SBATCH --container-image=./ubuntu+latest.sqsh
 #SBATCH --container-mounts=/etc/slurm/task_prolog:/etc/slurm/task_prolog,/scratch:/scratch,./graph-embedding:/GraphGPS
 #SBATCH --container-writable
 #SBATCH --container-remap-root
-#SBATCH --output=out3.txt
-#SBATCH --error=err3.txt
+#SBATCH --output=out.txt
+#SBATCH --error=err.txt
 
 apt-get update && apt-get upgrade -y
 cd /root
