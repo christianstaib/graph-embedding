@@ -1,7 +1,6 @@
 #!/bin/sh
 #SBATCH --partition=gpu_4
 #SBATCH --gres=gpu:4
-#SBATCH --nodes=14
 #SBATCH --time=720
 #SBATCH --container-image=./ubuntu+latest.sqsh
 #SBATCH --container-mounts=/etc/slurm/task_prolog:/etc/slurm/task_prolog,/scratch:/scratch,./graph-embedding:/GraphGPS
