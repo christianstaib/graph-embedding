@@ -143,15 +143,30 @@ def compute_posenc_stats(data, pe_types, is_undirected, cfg):
         )
 
     if 'HIG' in pe_types:
-        randInt = np.random.randint(data.num_nodes - 1)
-        data.x[randInt] = 0
-        sum = 0
-        for i in data.edge_index[0]:
-            if i == randInt:
-                relevant_node = data.edge_index[1][i]
-                data.x[randInt] += data.x[relevant_node]
-                sum += 1
-        data.x[randInt] = data.x[randInt] / sum
+        interpolation_chance = cfg.posenc_HIG.loss
+        is_interpolating = np.random.choice(2, 1, p=[1-interpolation_chance, interpolation_chance])[0]
+        minimum_node_size = cfg.posenc_HIG.minimum_node_size
+        nodes_interpolated = cfg.posenc_HIG.nodes_interpolated
+        minimum_node_size = max(minimum_node_size, nodes_interpolated)
+
+        if data.num_nodes > minimum_node_size and is_interpolating == 1:
+            rand_ints = np.random.choice(data.num_nodes, nodes_interpolated, replace=False)
+            sum = {}
+            for rand_int in rand_ints:
+                data.x[rand_int] = 0
+                sum[rand_int] = 0
+            for i, j in zip(data.edge_index[0], data.edge_index[1]):
+                if i.item() in rand_ints:
+                    if j.item() in rand_ints:
+                        continue
+                    relevant_node = j
+                    data.x[i] = torch.add(data.x[i], data.x[relevant_node])
+                    sum[i.item()] += 1
+            for rand_int in rand_ints:
+                if (sum[rand_int] ==0):
+                    continue
+                data.x[rand_int] = abs(data.x[rand_int] / sum[rand_int])
+                print(data.x[rand_int])
     return data
 
 

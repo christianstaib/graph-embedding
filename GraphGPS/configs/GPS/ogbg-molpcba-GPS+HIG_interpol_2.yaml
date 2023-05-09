@@ -1,13 +1,13 @@
 out_dir: results
-metric_best: auc
+metric_best: ap
 wandb:
   use: True
-  project: molhiv
+  project: molpcba
 dataset:
   format: OGB
-  name: ogbg-molhiv
+  name: ogbg-molpcba
   task: graph
-  task_type: classification
+  task_type: classification_multilabel
   transductive: False
   node_encoder: True
   node_encoder_name: Atom
@@ -18,11 +18,11 @@ dataset:
 posenc_HIG:
   enable: True
   loss : 1.0
-  nodes_interpolated: 1
-  minimum_node_size: 1
+  nodes_interpolated: 5
+  minimum_node_size: 10
 train:
   mode: custom
-  batch_size: 32
+  batch_size: 512
   eval_period: 1
   ckpt_period: 100
 model:
@@ -32,28 +32,29 @@ model:
   graph_pooling: mean
 gt:
   layer_type: CustomGatedGCN+Transformer
-  layers: 10
+  layers: 5
   n_heads: 4
-  dim_hidden: 64  # `gt.dim_hidden` must match `gnn.dim_inner`
-  dropout: 0.05
+  dim_hidden: 384  # `gt.dim_hidden` must match `gnn.dim_inner`
+  dropout: 0.2
   attn_dropout: 0.5
   layer_norm: False
   batch_norm: True
 gnn:
-  head: san_graph
+  head: default  # san_graph
   layers_pre_mp: 0
-  layers_post_mp: 3  # Not used when `gnn.head: san_graph`
-  dim_inner: 64  # `gt.dim_hidden` must match `gnn.dim_inner`
+  layers_post_mp: 1  # Not used when `gnn.head: san_graph`
+  dim_inner: 384  # `gt.dim_hidden` must match `gnn.dim_inner`
   batchnorm: True
   act: relu
   dropout: 0.0
   agg: mean
   normalize_adj: False
 optim:
+  batch_accumulation: 1
   clip_grad_norm: True
   optimizer: adamW
   weight_decay: 1e-5
-  base_lr: 0.0001
+  base_lr: 0.0005
   max_epoch: 100
   scheduler: cosine_with_warmup
   num_warmup_epochs: 5

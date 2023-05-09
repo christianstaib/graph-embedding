@@ -85,4 +85,11 @@ def set_cfg_posenc(cfg):
         pecfg.kernel.times_func = ''
 
     # Override default, electrostatic kernel has fixed set of 10 measures.
+    for name in ['posenc_HIG']:
+        pecfg = getattr(cfg, name)
+
+        pecfg.loss = 0.01
+        pecfg.nodes_interpolated = 1
+        pecfg.minimum_node_size = 10
+
     cfg.posenc_ElstaticSE.kernel.times_func = 'range(10)'
