@@ -1,0 +1,1 @@
+To get all results quoted in the paper, execute result_generator.py
