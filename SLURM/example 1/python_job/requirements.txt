@@ -1,7 +1,0 @@
-numpy
-gensim
-imblearn
-ogb
-sklearn
-sklearn
-tqdm
