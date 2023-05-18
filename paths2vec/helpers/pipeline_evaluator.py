@@ -10,7 +10,6 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC, SVR
 from sklearn.multioutput import MultiOutputClassifier, MultiOutputRegressor
 
-
 def get_paths2vec_X(
     dataset_name,
     graphs,
@@ -70,8 +69,8 @@ class PipelineEvaluator:
         result_dicts["test"] = []
         result_dicts["valid"] = []
 
-        for i in range(num_runs):
-            print(f"starting run {i + 1} of {num_runs}")
+        for run in range(num_runs):
+            print(f"starting run {run + 1} of {num_runs}")
 
             dataset = GraphPropPredDataset(name=dataset_name)
 
@@ -114,6 +113,10 @@ class PipelineEvaluator:
                 self.vertex_feature_idx,
                 self.edge_feature_idx,
             )
+
+            # save vectors
+            with open(f'raw_vectors/X_{dataset_name}_{run}.npy', 'wb') as f:
+                np.save(f, np.array(X))
 
             # split data
             data = dict()
